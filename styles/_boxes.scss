@@ -1,0 +1,133 @@
+.box-lists {
+  display: grid;
+  grid-template: auto / 1fr;
+  gap: 2.1rem;
+}
+
+.box {
+  border: 1px solid transparent;
+  padding: 2.3rem 3.2rem 3.1rem 3rem;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 20px rgba(0, 0, 0, 0.1), -3px -3px 20px rgba(0, 0, 0, 0.1);
+
+  &:nth-of-type(1) {
+    background: url("../images/bg-pattern-quotation.svg") no-repeat 90% 0;
+    background-size: 32%;
+    background-color: $moderate-violet;
+    color: $white;
+  }
+
+  &:nth-of-type(2) {
+    padding-right: 1.5rem;
+    background-color: $very-dark-grayish-blue;
+    color: $white;
+
+    .box-intro {
+      margin-top: 1.7rem;
+      width: 90%;
+    }
+  }
+
+  &:nth-of-type(3),
+  &:nth-of-type(5) {
+    background-color: $white;
+    color: $very-dark-grayish-blue;
+  }
+
+  &:nth-of-type(4) {
+    padding-right: 1.7rem;
+    background-color: $very-dark-blackish-blue;
+    color: $white;
+
+    .box-intro {
+      margin-top: 1.7rem;
+      width: 95%;
+    }
+  }
+
+  &:nth-of-type(5) {
+    padding-right: 1.8rem;
+
+    .box-intro {
+      margin-top: 1.7rem;
+    }
+  }
+}
+
+.box-header {
+  display: flex;
+  align-items: center;
+
+  img {
+    display: inline-block;
+    width: 2.85rem;
+    height: 2.85rem;
+    border-radius: 50%;
+    border: 1px solid green;
+  }
+
+  span {
+    display: block;
+    margin-left: 1.51rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+
+    &.degree {
+      opacity: 50%;
+    }
+  }
+}
+
+.box-intro {
+  margin-top: 1.59rem;
+  font-size: 1.9rem;
+  //   color: $white;
+}
+
+.box-details {
+  width: 96%;
+  margin-top: 1.6rem;
+  font-size: 1.25rem;
+  line-height: 1.79rem;
+  opacity: 70%;
+}
+
+@media (min-width: 992px) {
+  .box-lists {
+    grid-template: auto / repeat(4, 1fr);
+    grid-template-areas:
+      "dan dan jean kir"
+      "har pat pat kir";
+  }
+
+  .box {
+    padding-bottom: 2rem;
+    &:nth-of-type(1) {
+      grid-area: dan;
+      background-size: 20%;
+      padding-right: 4.5rem;
+    }
+
+    &:nth-of-type(2) {
+      grid-area: jean;
+    }
+
+    &:nth-of-type(3) {
+      grid-area: har;
+      padding-right: 4.5rem;
+    }
+
+    &:nth-of-type(4) {
+      grid-area: pat;
+    }
+
+    &:nth-of-type(5) {
+      grid-area: kir;
+    }
+
+    .box-details {
+      font-size: 1.35rem;
+      line-height: 1.89rem;
+    }
+  }
+}
